@@ -232,7 +232,10 @@ open class YouTubePlayerView: UIView, UIWebViewDelegate {
         let htmlString = rawHTMLString.replacingOccurrences(of: "%@", with: jsonParameters)
         
         // Load HTML in web view
-        webView.loadHTMLString(htmlString, baseURL: URL(string: baseURL))
+        
+        let youtubeURL = "https://www.youtube.com/"
+        webView.loadHTMLString(htmlString, baseURL: URL(string: youtubeURL))
+        
     }
     
     fileprivate func playerHTMLPath() -> String {
